@@ -1,0 +1,48 @@
+/*
+    table of content
+        1. reset
+            1.1. color
+            1.2. font family
+        2. header
+*/
+
+/* reset  */
+:root {
+    /* color */
+    --primary: #A53DFF;
+    --dark: #333333;
+    --pure: #fff;
+
+    /* font family  */
+    --primary-font: 'Work Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/* header  */
+.header .main-menu ul li {
+    display: inline-block;
+}
+.header .main-menu ul li a {
+    color: var(--dark);
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+.header .main-menu ul li:last-child a,
+.header .main-menu ul li a:hover {
+    background: var(--primary);
+    color: var(--pure);
+}
