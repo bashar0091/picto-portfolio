@@ -3,6 +3,8 @@
         1. reset
             1.1. color
             1.2. font family
+        2. button
+        2. heading
         2. header
 */
 
@@ -12,6 +14,10 @@
     --primary: #A53DFF;
     --dark: #333333;
     --pure: #fff;
+    --paragraph: #132238;
+    --fade: #F6EBFE;
+    --gray1: #424E60;
+    --gray2: #697484;
 
     /* font family  */
     --primary-font: 'Work Sans', sans-serif;
@@ -29,8 +35,44 @@ ul {
 a {
     text-decoration: none;
 }
+p {
+    color: var(--paragraph);
+}
+
+/* utility */
+.py-100 {
+    padding: 100px 0;
+}
+
+/* button  */
+.cs_btn {
+    border-radius: 4px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+.cs_btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+.cs_btn-primary:hover,
+.cs_btn-secondary {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* heading  */
+.main-heading {
+    font-size: 55px;
+    font-weight: 600;
+}
 
 /* header  */
+.header {
+    background: var(--pure);
+}
 .header .main-menu ul li {
     display: inline-block;
 }
@@ -45,4 +87,73 @@ a {
 .header .main-menu ul li a:hover {
     background: var(--primary);
     color: var(--pure);
+}
+
+/* banner  */
+.banner {
+    position: relative;
+}
+/* .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+} */
+.banner-bg1,
+.banner-bg2 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	filter: blur(300px);
+    z-index: -999;
+}
+.banner-bg1 {
+	right: 0;
+	top: 0;
+	background: rgba(218, 77, 241, 0.4);
+}
+.banner-bg2 {
+	right: 0;
+	bottom: 0;
+    background: rgba(196, 245, 233, 0.7);
+}
+.banner .counter-sec .item {
+	background: var(--fade);
+	padding: 10px 0;
+	text-align: center;
+}
+.banner .wrapper:first-child .item {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+.banner .wrapper:last-child .item {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+.banner .counter-sec .item h3 {
+	font-size: 32px;
+    color: var(--gray1)
+}
+.banner .counter-sec .item span {
+    color: var(--gray2);
+}
+.banner .shadow-img {
+	box-shadow: 0px 24px 116px rgba(43, 56, 76, 0.09);
+	border-radius: 25px;
+    background-color: var(--pure);
+}
+
+/* responsive */
+@media screen and (min-width:1400px) {
+    p {
+        font-size: 18px;
+    }
+    .main-heading {
+        font-weight: 600;
+        font-size: 72px;
+        line-height: 84px;
+    }
 }
