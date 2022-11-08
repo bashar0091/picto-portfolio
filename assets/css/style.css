@@ -3,9 +3,12 @@
         1. reset
             1.1. color
             1.2. font family
+        2. utility
         2. button
         2. heading
         2. header
+        2. banner
+        2. responsive
 */
 
 /* reset  */
@@ -14,10 +17,11 @@
     --primary: #A53DFF;
     --dark: #333333;
     --pure: #fff;
-    --paragraph: #132238;
+    --paragraph: #87909D;
     --fade: #F6EBFE;
     --gray1: #424E60;
     --gray2: #697484;
+    --gray3: #F0F1F3;
 
     /* font family  */
     --primary-font: 'Work Sans', sans-serif;
@@ -43,6 +47,20 @@ p {
 .py-100 {
     padding: 100px 0;
 }
+.pb-100 {
+    padding-bottom: 100px;
+}
+.shadow-img {
+	box-shadow: 0px 24px 116px rgba(43, 56, 76, 0.09);
+	border-radius: 25px;
+    position: relative;
+}
+.shadow-img-pure {
+    background-color: var(--pure);
+}
+.shadow-img-fade {
+    background-color: var(--gray3);
+}
 
 /* button  */
 .cs_btn {
@@ -51,7 +69,9 @@ p {
     border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
     display: inline-block;
+    position: relative;
 }
+.cs_btn-secondary:hover,
 .cs_btn-primary {
     background: var(--primary);
     color: #fff;
@@ -62,10 +82,35 @@ p {
     border-color: var(--primary);
     color: var(--primary);
 }
+.cs_btn-icon img {
+	height: 20px;
+	position: absolute;
+	width: 20px;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+}
+.cs_btn-secondary:hover .download-icon {
+    display: none;
+}
+.cs_btn-secondary .download-icon-pure {
+    display: none;
+}
+.cs_btn-secondary:hover .download-icon-pure {
+    display: inline-block;
+}
+.cs_btn-secondary span {
+    padding-left: 20px;
+}
 
 /* heading  */
 .main-heading {
     font-size: 55px;
+    font-weight: 600;
+}
+.heading3 {
+	font-size: 38px;
+	line-height: 50px;
     font-weight: 600;
 }
 
@@ -93,15 +138,6 @@ p {
 .banner {
     position: relative;
 }
-/* .banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-} */
 .banner-bg1,
 .banner-bg2 {
 	position: absolute;
@@ -140,10 +176,40 @@ p {
 .banner .counter-sec .item span {
     color: var(--gray2);
 }
-.banner .shadow-img {
-	box-shadow: 0px 24px 116px rgba(43, 56, 76, 0.09);
-	border-radius: 25px;
-    background-color: var(--pure);
+
+/* profile */
+.profile-sec {
+    position: relative;
+}
+.profile-sec .profile-box {
+	background: var(--pure);
+	box-shadow: 0px 36px 105px rgba(43, 56, 76, 0.1);
+	border-radius: 16px;
+	padding: 60px 90px;
+}
+.profile-sec .social-list {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: var(--pure);
+	box-shadow: 0px 12px 64px rgba(28, 25, 25, 0.12);
+	border-radius: 4px;
+	padding: 12px 6px;
+	width: 220px;
+}
+.profile-sec .social-list ul li {
+ display: inline-block;
+}
+.profile-sec .social-list ul li a {
+	box-shadow: 0px 12px 64px rgba(28, 25, 25, 0.12);
+	border-radius: 4px;
+	padding: 4px 8px;
+	display: inline-block;
+	border: 1px solid transparent;
+}
+.profile-sec .social-list ul li a:hover {
+    border-color: var(--primary);
 }
 
 /* responsive */
